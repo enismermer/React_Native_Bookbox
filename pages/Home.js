@@ -1,5 +1,8 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Header from '../component/Header'
+import Footer from '../component/Footer'
+import Main from '../component/Main'
 import QrCode from '../component/QrCodeUuid'
 import { Link, useNavigate } from 'react-router-native'
 import Api from '../component/Api'
@@ -15,11 +18,14 @@ export default function Home() {
   };
   return (
     <View>
+      {/* <Header />
+      <Main /> */}
       {/* <QrCode />
       <Link to="/qrcode">
         <Text>QrCode</Text>
       </Link>
       <Button title='Cliquez moi' onPress={handleBarCodeScanned}/> */}
+      {/* <Footer /> */}
       <Accueil />
       <Maps />
     </View>
