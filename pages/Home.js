@@ -7,7 +7,6 @@ import QrCode from '../component/QrCodeUuid'
 import { Link, useNavigate } from 'react-router-native'
 import Api from '../component/Api'
 import Accueil from './Accueil'
-import Maps from './Maps'
 
 export default function Home() {
   const navigate = useNavigate();
@@ -27,7 +26,6 @@ export default function Home() {
       <Button title='Cliquez moi' onPress={handleBarCodeScanned}/> */}
       {/* <Footer /> */}
       <Accueil />
-      <Maps />
     </View>
   )
 }

@@ -1,8 +1,6 @@
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import Maps from './Maps';
 import { Link, useLocation, useNavigate } from 'react-router-native';
-import Profil from './MapBox';
 
 export default function Accueil() {
   const PlaceholderImage = require('../assets/logo_book-removebg-preview.png');
@@ -16,7 +14,6 @@ export default function Accueil() {
         <Text style={styles.titlelogo}>BOOKFLUX</Text>
         <Link to="/qrcodeuuid">
           <Text style={styles.pink}>Démarrer</Text>
-          {/* <Button title='Démarrer' /> */}
         </Link>
     </View>
   )

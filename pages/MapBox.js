@@ -1,12 +1,14 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Link, useLocation } from 'react-router-native';
-import Maps from './Maps';
+import MapsTest from '../component/MapsTest';
+
 
 export default function MapBox() {
 const { state } = useLocation();
 const PlaceholderImage = require('../assets/logo_book-removebg-preview.png');
 
+console.log("toto");
 
 // alert(state.info.id)
   return (
@@ -18,7 +20,7 @@ const PlaceholderImage = require('../assets/logo_book-removebg-preview.png');
       <Text>Mail {state.info.mail}</Text>
       <Text>UUID {state.info.uuid}</Text> */}
       <View style={styles.map}>
-        <Maps idBox={state.info.id}/>
+        <MapsTest idBox={state.info.id}/>
       </View>
       <View style={styles.box}>
         <Text>Box :

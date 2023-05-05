@@ -4,40 +4,50 @@ import { StyleSheet, View, Text } from "react-native";
 import * as Location from "expo-location";
 import { Marker } from "react-native-maps";
 
-export default function Maps({idBox}) {
+export default function MapsTest({idBox}) {
     const [data, setData] = useState(null);
     const [mapRegion, setMapRegion] = useState({
-        latitude: 45.1810309,
-        longitude: 5.7497118,
+        latitude: 45.18209454984173, 
+        longitude: 5.726817011545452,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
     });
 
     useEffect(() => {
-        if(idBox){
-            fetch(`https://swift-snakes-eat-193-252-172-28.loca.lt/api/box/${idBox}`)
+            fetch(`https://silly-rules-say-193-252-172-28.loca.lt/api/box/${idBox}`)
             .then((response) => response.json())
-            .then((data) => setData(data));
-        }
-    }, []);
-data && console.log(data);
+            .then((data) => {
+            const coords = data?.geoLoc["1"].split(", ");
+            console.log(coords[0]);
+            const marker2 = {
+                coordinate: {
+                  latitude: parseFloat(coords[0]),
+                  longitude: parseFloat(coords[1]),
+                },
+              }; 
+            setData(marker2)});
+        }, []);
 
+        // return {
+        //    const coordinate = {
+        //        latitude: parseFloat(coords[0]),
+        //        longitude: parseFloat(coords[1]),
 
-
-
-    // const markers = data?.map((item) => {
-    //     console.log(item);
-    //     const coords = item.geoLoc["1"].split(",");
-    //     return {
-    //         coordinate: {
-    //             latitude: parseFloat(coords[0]),
-    //             longitude: parseFloat(coords[1]),
-    //         },
-    //         title: item.street,
-    //         description: `${item.zipcode} ${item.city}`,
-    //         id: item.id,
-    //     };
-    // });
+        //    }
+        //    const marker2 = {
+        //     coordinate: {
+        //       latitude: parseFloat(coords[0]),
+        //       longitude: parseFloat(coords[1]),
+        //     },
+        //   };
+        //   console.log(marker2);
+        //    console.log(marker2.coordinate.latitude);
+            
+        //     title: item.street,
+        //     description: `${item.zipcode} ${item.city}`,
+        //     id: item.id,
+        // };
+ 
 
     useEffect(() => {
         (async () => {
@@ -63,20 +73,13 @@ data && console.log(data);
     return (
         <View style={styles.container}>
             <MapView style={styles.map} region={mapRegion}>
-                {data &&      
-                <Marker
-                    coordinate={coordinate}
-                    title={data?.street}
-                    description={data?.city}
-                /> }   
-          
-           
-                {/* <Marker 
-                    coordinate = {{latitude: 45.198387, longitude: 5.693123}}
-                    pinColor = {"red"} // any color
-                    title={"title"}
-                    description={"description"}
-                /> */}
+                   {data && 
+                       <Marker
+                          coordinate={data.coordinate}
+                           title={data?.street}
+                         description={data?.city}
+                      /> 
+                   }
             </MapView>
         </View>
     );

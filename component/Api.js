@@ -1,6 +1,8 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useLocation, useNavigate } from 'react-router-native';
+import { UserContext } from '../userContext';
+
 
 export default function Api(props) {
     console.log(props.info);
@@ -8,9 +10,11 @@ export default function Api(props) {
     const navigate = useNavigate();
     const { state } = useLocation();
     console.log(state);
+    const {dataUser, setDataUser} = useContext(UserContext);
+    
     const getUser = async () => {
         try {
-            const response = await fetch('https://swift-snakes-eat-193-252-172-28.loca.lt/api/v1/user/login', {
+            const response = await fetch('https://silly-rules-say-193-252-172-28.loca.lt/api/v1/user/login', {
                 method: 'POST',
                 headers: {
                   Accept: 'application/json',
@@ -26,6 +30,8 @@ export default function Api(props) {
             alert("Utilisateur inexistant")
             navigate(-1)
           } else if (response.status == 200) {
+            setDataUser(json);
+         
             navigate('/profil', { state: { info: json}});
           }
           setData(json);

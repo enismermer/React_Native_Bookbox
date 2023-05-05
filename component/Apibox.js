@@ -11,7 +11,7 @@ export default function Apibox() {
 
     const getBox = async () => {
         try {
-            const response = await fetch(`https://swift-snakes-eat-193-252-172-28.loca.lt/api/box/${state.id}`, {
+            const response = await fetch(`https://silly-rules-say-193-252-172-28.loca.lt/api/box/${state.id}`, {
                 method: 'GET',
                 headers: {
                   Accept: 'application/json',
