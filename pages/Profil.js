@@ -18,7 +18,7 @@ export default function Profil() {
   return (
     <View style={styles.container}>
       <Text style={styles.uuid}>Bonjour {state.info.name} </Text>
-      <Image style={styles.avatar} source={{uri:`https://bumpy-rabbits-behave-91-163-175-151.loca.lt/uploads/${state.info.avatar}`}}/>
+      <Image style={styles.avatar} source={{uri:`https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/uploads/${state.info.avatar}`}}/>
       <Button title="Localiser une box" onPress={scanBox} style={styles.button}/>   
     </View>
   )

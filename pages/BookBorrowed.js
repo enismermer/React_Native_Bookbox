@@ -7,10 +7,10 @@ export default function BookBorrowed() {
 const [data, setData] = useState(null);
 const { state } = useLocation();
 const idbook = state.idbook
-const {dataUser, setDataUser} = useContext(UserContext);
+// const {dataUser, setDataUser} = useContext(UserContext);
 
 useEffect(() => {
-    fetch(`https://silly-rules-say-193-252-172-28.loca.lt/api/book/${idbook}`)
+    fetch(`https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/api/book/${idbook}`)
     .then((response) => response.json())
     .then((data) => setData(data));
 
@@ -23,8 +23,8 @@ useEffect(() => {
         <Text style={styles.title}>{state.info.Message}</Text>
       </View>
       <View style={styles.red}> 
-        <Image style={styles.cover} source={{uri:`https://silly-rules-say-193-252-172-28.loca.lt/uploads/${data?.cover}`}}/>
-        <Text style={{fontSize: 20}}> { data?.title } </Text>
+        <Image style={styles.cover} source={{uri:`https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/uploads/${data?.cover}`}}/>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}> { data?.title } </Text>
         <Text style={{fontSize: 20}}> { data?.author } </Text>
 
         <Link to="/">

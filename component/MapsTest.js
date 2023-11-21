@@ -14,7 +14,7 @@ export default function MapsTest({idBox}) {
     });
 
     useEffect(() => {
-            fetch(`https://silly-rules-say-193-252-172-28.loca.lt/api/box/${idBox}`)
+            fetch(`https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/api/box/${idBox}`)
             .then((response) => response.json())
             .then((data) => {
             const coords = data?.geoLoc["1"].split(", ");

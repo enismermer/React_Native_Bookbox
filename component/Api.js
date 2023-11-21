@@ -14,7 +14,7 @@ export default function Api(props) {
     
     const getUser = async () => {
         try {
-            const response = await fetch('https://silly-rules-say-193-252-172-28.loca.lt/api/v1/user/login', {
+            const response = await fetch('https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/api/v1/user/login', {
                 method: 'POST',
                 headers: {
                   Accept: 'application/json',

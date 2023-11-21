@@ -11,7 +11,7 @@ export default function Apibox() {
 
     const getBox = async () => {
         try {
-            const response = await fetch(`https://silly-rules-say-193-252-172-28.loca.lt/api/box/${state.id}`, {
+            const response = await fetch(`https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/api/box/${state.id}`, {
                 method: 'GET',
                 headers: {
                   Accept: 'application/json',

@@ -9,12 +9,12 @@ export default function ApiBook() {
     const navigate = useNavigate();
     const { state } = useLocation();
     const id_book = state.id;
-    const {dataUser, setDataUser} = useContext(UserContext);
+    // const {dataUser, setDataUser} = useContext(UserContext);
 
     const getBook = async () => {
         try {
 
-            const response = await fetch(`https://silly-rules-say-193-252-172-28.loca.lt/api/v1/books/${id_book}/borrowBook/${dataUser.id}`, {
+            const response = await fetch(`https://8330-2a01-cb15-810f-3400-a5a0-93af-3bbd-e56e.ngrok-free.app/api/v1/books/${id_book}/borrowBook/2`, {
                 method: 'GET',
                 headers: {
                   Accept: 'application/json',
